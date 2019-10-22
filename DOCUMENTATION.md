@@ -1,29 +1,29 @@
-SelfOrganizingMap:
+__SelfOrganizingMap__
 
 	__init__(learning_rate, node_count, input_size, weight_range)
 
-		Creates instance of self-organizing map.
+_Creates instance of self-organizing map._
 
 	save (filename)
 
-		Saves self-organizing map as configuration file (filename).
+_Saves self-organizing map as configuration file (filename)._
 
 	load (filename)
 
-		Loads self-organizing map from configuration file (filename) and returns it.
+_Loads self-organizing map from configuration file (filename) and returns it._
 
 	randomize (weight_range)
 
-		Assigns random values within range (weight_range) to all nodes.
+_Assigns random values within range (weight_range) to all nodes._
 
 	update (sample)
 
-		Performs mapping/learning process for one input (sample) and returns the result.
+_Performs mapping/learning process for one input (sample) and returns the result._
 
 	train (samples)
 		
-		Performs mapping/learning process for multiple inputs (samples).
+_Performs mapping/learning process for multiple inputs (samples)._
 
 	test (samples)
 			
-		Performs mapping process for multiple inputs (samples) and returns the results (no learning).
+_Performs mapping process for multiple inputs (samples) and returns the results (no learning)._

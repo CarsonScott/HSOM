@@ -1,7 +1,5 @@
 ### SelfOrganizingMap
 
-<br/><br/>
-
 	__init__(learning_rate, node_count, input_size, weight_range)
 
 _Creates an instance of a self-organizing map._
@@ -35,7 +33,11 @@ _Performs the mapping process for multiple inputs (samples) and returns the resu
 
 * __samples__ is a list of binary vectors that get passed to the update function one-by-one.
 
-<br/><br/>
+<br/>
+
+***
+
+<br/>
 
 ### SelfOrganizingMemory
 

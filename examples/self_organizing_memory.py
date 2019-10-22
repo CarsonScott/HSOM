@@ -32,6 +32,7 @@ for i in range(len(outputs)):
   print(outputs[i])
 
 # TEST RESULTS
+#
 # [1, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 # [0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
 # [0, 0, 1, 0, 0, 0, 0, 0, 0, 1]

@@ -8,14 +8,14 @@ The winner represents a class to which the given input is mapped. The weights of
 
 ### Example
 
-    from selforganizingmap import SelfOrganizingMap
+    from som import SelfOrganizingMap
 
     learning_rate = 0.05
     node_count = 5
     input_size = 6
     weight_range = (0.01, 0.03)
 
-    som = SelfOrganizingMap(learning_rate, node_count, input_size, weight_range)
+    self_organizing_map = SelfOrganizingMap(learning_rate, node_count, input_size, weight_range)
 
     inputs = [
       [1,1,0,0,0,0],
@@ -24,8 +24,8 @@ The winner represents a class to which the given input is mapped. The weights of
       [0,0,0,1,1,0],
       [0,0,0,0,1,1]]
 
-    som.train(inputs, iterations=1000)
-    outputs = som.test(inputs)
+    self_organizing_map.train(inputs, iterations=1000)
+    outputs = self_organizing_map.test(inputs)
     
     for i in range(len(outputs)):
       print(outputs[i])

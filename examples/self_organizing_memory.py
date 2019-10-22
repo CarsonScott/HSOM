@@ -6,6 +6,7 @@ node_count = 5
 learning_rate = 0.05
 weight_range = (0.01, 0.03)
 
+# Create hierarchical layers of size 20, 15, 10, 5, and 2
 som = SelfOrganizingMemory(
   learning_rate=learning_rate, 
   node_count=node_count, 

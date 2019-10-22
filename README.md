@@ -29,3 +29,5 @@ The winner represents a class to which the given input is mapped. The weights of
     
     for i in range(len(outputs)):
       print(outputs[i])
+  
+  [Documentation](https://github.com/CarsonScott/self-organizing-map/blob/master/DOCUMENTATION.md)

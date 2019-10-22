@@ -6,7 +6,7 @@ setup(
     author='Carson Scott',
     description='A Self-Organizing Map for Multiclass Classification.',
     author_email='carsonjscott14@gmail.com',
-    url='git@github.com:CarsonScott/self-organizing-map.git',
+    url='https://github.com/CarsonScott/self-organizing-map.git',
     packages=['som'],
 )
 

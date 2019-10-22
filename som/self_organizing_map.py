@@ -1,7 +1,7 @@
 from .util import *
 
 class SelfOrganizingMap:
-	def __init__(self, learning_rate=0, node_count=0, input_size=0, weight_range=(0,0)):
+	def __init__(self, learning_rate, node_count, input_size, weight_range):
 		self.learning_rate=learning_rate
 		self.nodes=[]
 		self.inputs=[]
@@ -10,45 +10,13 @@ class SelfOrganizingMap:
 		self.winner=None
 		self.training=True
 		for i in range(node_count):
-			node=[0 for j in range(input_size)]
-			self.nodes.append(node)
+			self.nodes.append([])
+			for j in range(input_size):
+				self.nodes[i].append(uniform(*weight_range))
 			self.inputs.append(0)
 			self.outputs.append(0)
 			self.thresholds.append(0)
-		self.randomize(weight_range)
-
-	def save(self, filename):
-		config=ConfigParser()
-		config['Map']={
-			'learning_rate':str(self.learning_rate),
-			'node_count':str(len(self.nodes)),
-			'input_size':str(len(self.nodes[0]))}
-		config['Weights']={}
-		for i in range(len(self.nodes)):
-			config['Weights'][str(i)]=str(self.nodes[i])
-		config['Thresholds']={}
-		for i in range(len(self.nodes)):
-			config['Thresholds'][str(i)]=str(self.thresholds[i])
-		config.write(open(filename, 'w'))
-
-	def load(self, filename):
-		config=ConfigParser()
-		config.read(filename)
-		learning_rate=eval(config['Map']['learning_rate'])
-		node_count=eval(config['Map']['node_count'])
-		input_size=eval(config['Map']['input_size'])
-		output=SelfOrganizingMap(learning_rate, node_count, input_size)
-		for i in range(node_count):
-			weights=eval(config['Weights'][str(i)])
-			threshold=eval(config['Thresholds'][str(i)])
-			output.nodes[i]=weights
-			output.thresholds[i]=threshold
-		return output
-
-	def randomize(self, weight_range):
-		for i in range(len(self.nodes)):
-			self.nodes[i]=[uniform(*weight_range) for j in range(len(self.nodes[i]))]
-
+			
 	def set_training(self, training):
 		self.training=training
 

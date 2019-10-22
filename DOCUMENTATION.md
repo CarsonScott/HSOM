@@ -26,4 +26,4 @@ _Performs mapping/learning process for multiple inputs (samples)._
 
 	test (samples)
 			
-_Performs mapping process for multiple inputs (samples) and returns the results (no learning)._
+_Performs mapping process for multiple inputs (samples) and returns the results without learning._

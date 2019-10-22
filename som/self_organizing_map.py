@@ -49,11 +49,11 @@ class SelfOrganizingMap:
 		for i in range(len(self.nodes)):
 			self.nodes[i]=[uniform(*weight_range) for j in range(len(self.nodes[i]))]
 
-	def compute_outputs(self, X):
+	def compute_outputs(self, sample):
 		for i in range(len(self.nodes)):
 			h=self.thresholds[i]
 			W=self.nodes[i]
-			x=sum([X[j]*W[j] for j in range(len(X))])
+			x=sum([sample[j]*W[j] for j in range(len(sample))])
 			y=logistic(x-h)
 			self.inputs[i]=x
 			self.outputs[i]=y

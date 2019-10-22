@@ -1,5 +1,5 @@
 from configparser import ConfigParser
-from random import uniform
+from random import uniform, sample
 import numpy as np
 
 def logistic(x):  

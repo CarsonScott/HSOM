@@ -1,4 +1,5 @@
 from .self_organizing_map import SelfOrganizingMap
+from .util import *
 
 class SelfOrganizingMemory:
 	def __init__(self, learning_rate, node_count, input_size, weight_range, layer_sizes=[], link_percentages=[]):

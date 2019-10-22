@@ -6,36 +6,16 @@ This specific SOM is a feedforward neural network. Each node in the output layer
 
 The winner represents a class to which the given input is mapped. The weights of the winner are trained so that they better resemble the input pattern. The SOM produces a state vector as output, which shows at any given time only one node active in response to a given input.
 
-### Example
+[Example code](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_map.py)
 
-    from som import SelfOrganizingMap
+# A Hierarchy of Self-Organizing Maps
 
-    learning_rate = 0.05
-    node_count = 5
-    input_size = 6
-    weight_range = (0.01, 0.03)
+Self-organizing maps are useful because they automatically reduce the dimensionality of whatever data is being observed. However, if the dimensionality of the data in question is sufficiently high, a single self-organizing map will fail to reduce it while maintaining an accurate representation in the process.
 
-    self_organizing_map = SelfOrganizingMap(
-        learning_rate=learning_rate, 
-        node_count=node_count, 
-        input_size=input_size, 
-        weight_range=weight_range)
+The solution is to combine many self-organizing maps into one, giant structure. SOMs can be arranged in a hierarchy, wherein each layer of the hierarchy contains a set of SOMs that receive input from the previous layer and produce output to the next. 
 
-    inputs = [
-      [1,1,0,0,0,0],
-      [0,1,1,0,0,0],
-      [0,0,1,1,0,0],
-      [0,0,0,1,1,0],
-      [0,0,0,0,1,1]]
+At the bottom of the hierarchy, SOMs receive raw data as input just as a typical singular SOM would do. Each SOM can only see part of the input space of their layer, and are forced to produce an output based on that. The set of outputs from all the SOMs in a layer are concatenated into a single output vector. This output vector is sparse due to the fact that each SOM has only one node active at any given time. The layer output thus has the same sparsity as an individual SOM. 
 
-    for i in range(200):
-        self_organizing_map.train(inputs)
+By stacking layers on top of one another and reducing the number of SOMs per layer as the hierarchy grows, it is possible to create a system that adequately maps high-dimensional data down to a low-dimensional representation without facing the problems described above. Such a system also behaves externally like an individual SOM, meaning the interface that allows data to be processed by an SOM is the exact same as that which allows a hierarchy of SOMs to process data. The only difference is that the output of the hierachy has passed through multiple stages of dimensionality reduction, whereas the output of an SOM has only gone through a single stage.
 
-    outputs = self_organizing_map.test(inputs)
-
-    for i in range(len(outputs)):
-      print(outputs[i])
-      
-The result of this code should produce 5 unique output vectors, in which every node responds exactly once to a given input.
-  
-  [Documentation](https://github.com/CarsonScott/self-organizing-map/blob/master/DOCUMENTATION.md)
+[Example code](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_memory.py)

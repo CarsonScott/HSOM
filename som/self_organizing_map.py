@@ -49,6 +49,9 @@ class SelfOrganizingMap:
 		for i in range(len(self.nodes)):
 			self.nodes[i]=[uniform(*weight_range) for j in range(len(self.nodes[i]))]
 
+	def set_training(self, training):
+		self.training=training
+
 	def compute_outputs(self, sample):
 		for i in range(len(self.nodes)):
 			h=self.thresholds[i]
@@ -62,7 +65,7 @@ class SelfOrganizingMap:
 		output[self.winner]=1
 		return output
 
-	def compute_weights(self, X):
+	def compute_weights(self, sample):
 		W=self.nodes[self.winner]
 		h=self.thresholds[self.winner]
 		y=self.outputs[self.winner]
@@ -71,7 +74,7 @@ class SelfOrganizingMap:
 		h+=dh
 		for i in range(len(W)):
 			wi=W[i]
-			xi=X[i]
+			xi=sample[i]
 			if xi==0:xi=-1
 			dwij=self.learning_rate*y*xi
 			wi+=dwij
@@ -81,22 +84,21 @@ class SelfOrganizingMap:
 		self.nodes[self.winner]=W
 		self.thresholds[self.winner]=h
 
-	def update(self, X):
-		Y=self.compute_outputs(X)
-		if self.training:
-			self.compute_weights(X)
-		return Y
+	def update(self, sample):
+		output=self.compute_outputs(sample)
+		if self.training:self.compute_weights(sample)
+		return output
 
 	def train(self, samples):
-		for X in samples:
-			Y=self.update(X)
+		for sample in samples:
+			self.update(sample)
 			
 	def test(self, samples):
 		outputs=[]
 		training=self.training
-		self.training=False
-		for X in samples:
-			Y=self.update(X)
-			outputs.append(Y)
-		self.training=training
+		self.set_training(False)
+		for sample in samples:
+			output=self.update(sample)
+			outputs.append(output)
+		self.set_training(training)
 		return outputs

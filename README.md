@@ -15,7 +15,11 @@ The winner represents a class to which the given input is mapped. The weights of
     input_size = 6
     weight_range = (0.01, 0.03)
 
-    self_organizing_map = SelfOrganizingMap(learning_rate, node_count, input_size, weight_range)
+    self_organizing_map = SelfOrganizingMap(
+        learning_rate=learning_rate, 
+        node_count=node_count, 
+        input_size=input_size, 
+        weight_range=weight_range)
 
     inputs = [
       [1,1,0,0,0,0],
@@ -24,8 +28,14 @@ The winner represents a class to which the given input is mapped. The weights of
       [0,0,0,1,1,0],
       [0,0,0,0,1,1]]
 
-    self_organizing_map.train(inputs, iterations=1000)
+    for i in range(200):
+        self_organizing_map.train(inputs)
+
     outputs = self_organizing_map.test(inputs)
-    
+
     for i in range(len(outputs)):
       print(outputs[i])
+      
+The result of this code should produce 5 unique output vectors, in which every node responds exactly once to a given input.
+  
+  [Documentation](https://github.com/CarsonScott/self-organizing-map/blob/master/DOCUMENTATION.md)

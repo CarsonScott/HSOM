@@ -1,34 +1,47 @@
 ### SelfOrganizingMap
 
+<p>
+	
 	__init__(learning_rate, node_count, input_size, weight_range)
 
 _Creates an instance of a self-organizing map._
 
-__learning_rate__ is a numerical value that controls the rate at which weights are changed during the learning process.
+* __learning_rate__ is a numerical value that controls the rate at which weights are changed during the learning process.
+* __node_count__ is an integer value that determines the number of nodes in the SOM and thus the size of the output vector.
+* __input_size__ is an integer value that determines the size of the weight vectors associated with each node.
+* __weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values.
 
-__node_count__ is an integer value that determines the number of nodes in the SOM and thus the size of the output vector.
+</p>
 
-__input_size__ is an integer value that determines the size of the weight vectors associated with each node.
+<p>
 
-__weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values.
-
-	update(sample)
+    update(sample)
 
 _Performs the mapping/learning process for one input (sample) and returns the result._
 
-__sample__ is a binary vector with a length equal to the input_size value passed to the SelfOrganizingMap constructor. 
+* __sample__ is a binary vector with a length equal to the input_size value passed to the SelfOrganizingMap constructor. 
+
+</p>
+
+<p>
 
 	train(samples)
 		
 _Performs the mapping/learning process for multiple inputs (samples)._
 
-__samples__ is a list of binary vectors that get passed to the update function one-by-one.
+* __samples__ is a list of binary vectors that get passed to the update function one-by-one.
+
+</p>
+
+<p>
 
 	test(samples)
 			
 _Performs the mapping process for multiple inputs (samples) and returns the results without learning._
 
-__samples__ is a list of binary vectors that get passed to the update function one-by-one.
+* __samples__ is a list of binary vectors that get passed to the update function one-by-one.
+
+</p>
 
 ### SelfOrganizingMemory
 

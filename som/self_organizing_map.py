@@ -87,15 +87,10 @@ class SelfOrganizingMap:
 			self.compute_weights(X)
 		return Y
 
-	def train(self, samples, iterations):
-		index=0
-		for i in range(iterations):
-			X=samples[index]
+	def train(self, samples):
+		for X in samples:
 			Y=self.update(X)
-			index+=1
-			if index >= len(samples):
-				index=0
-
+			
 	def test(self, samples):
 		outputs=[]
 		training=self.training

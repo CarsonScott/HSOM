@@ -1,1 +1,1 @@
-# self-organizing-map
+# A Self-Organizing Map for Multiclass Classification 

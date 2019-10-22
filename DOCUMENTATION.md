@@ -1,5 +1,7 @@
 ### SelfOrganizingMap
 
+<br/>
+
 	__init__(learning_rate, node_count, input_size, weight_range)
 
 _Creates an instance of a self-organizing map._
@@ -40,6 +42,8 @@ _Performs the mapping process for multiple inputs (samples) and returns the resu
 <br/>
 
 ### SelfOrganizingMemory
+
+<br/>
 
 	__init__(learning_rate, node_count, input_size, weight_range, layer_sizes=[], link_percentages=[])
 	

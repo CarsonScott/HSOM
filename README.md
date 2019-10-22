@@ -35,5 +35,7 @@ The winner represents a class to which the given input is mapped. The weights of
 
     for i in range(len(outputs)):
       print(outputs[i])
+      
+The result of this code should produce 5 unique output vectors, in which every node responds exactly once to a given input.
   
   [Documentation](https://github.com/CarsonScott/self-organizing-map/blob/master/DOCUMENTATION.md)

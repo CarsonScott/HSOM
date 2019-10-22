@@ -22,7 +22,7 @@ By stacking layers on top of one another and reducing the number of SOMs per lay
 
 __Install som:__
 
-    pip install git+ssh://git@github.com:CarsonScott/self-organizing-map.git
+    pip install git+https://github.com/CarsonScott/self-organizing-map.git
 
 # Examples
 

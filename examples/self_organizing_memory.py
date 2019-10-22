@@ -7,7 +7,7 @@ learning_rate = 0.05
 weight_range = (0.01, 0.03)
 
 # Create hierarchical layers of size 20, 15, 10, 5, and 2
-som = SelfOrganizingMemory(
+self_organizing_memory = SelfOrganizingMemory(
   learning_rate=learning_rate, 
   node_count=node_count, 
   input_size=input_size, 
@@ -25,9 +25,10 @@ samples=[]
     samples.append(X)
     
 for i in range(200):
-  som.train(samples)
+  self_organizing_memory.train(samples)
   
-outputs=som.test(samples)
+outputs=self_organizing_memory.test(samples)
+
 for i in range(len(outputs)):
   print(outputs[i])
 

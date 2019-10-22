@@ -6,8 +6,6 @@ This specific SOM is a feedforward neural network. Each node in the output layer
 
 The winner represents a class to which the given input is mapped. The weights of the winner are trained so that they better resemble the input pattern. The SOM produces a state vector as output, which shows at any given time only one node active in response to a given input.
 
-[Example code](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_map.py)
-
 # A Hierarchy of Self-Organizing Maps
 
 Self-organizing maps are useful because they automatically reduce the dimensionality of whatever data is being observed. However, if the dimensionality of the data in question is sufficiently high, a single self-organizing map will fail to reduce it while maintaining an accurate representation in the process.
@@ -20,4 +18,10 @@ At the bottom of the hierarchy, SOMs receive raw data as input just as a typical
 
 By stacking layers on top of one another and reducing the number of SOMs per layer as the hierarchy grows, it is possible to create a system that adequately maps high-dimensional data down to a low-dimensional representation without facing the problems described above. Such a system also behaves externally like an individual SOM, meaning the interface that allows data to be processed by an SOM is the exact same as that which allows a hierarchy of SOMs to process data. The only difference is that the output of the hierachy has passed through multiple stages of dimensionality reduction, whereas the output of an SOM has only gone through a single stage.
 
-[Example code](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_memory.py)
+# Code Examples
+
+[Self-Organizing Map](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_map.py)
+
+[Self-Organizing Memory](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_memory.py)
+
+[Documentation](https://github.com/CarsonScott/self-organizing-map/blob/master/DOCUMENTATION.md)

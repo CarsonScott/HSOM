@@ -12,15 +12,11 @@ __input_size__ is an integer value that determines the size of the weight vector
 
 __weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values.
 
-___
-
 	update(sample)
 
 _Performs the mapping/learning process for one input (sample) and returns the result._
 
 __sample__ is a binary vector with a length equal to the input_size value passed to the SelfOrganizingMap constructor. 
-
-___
 
 	train(samples)
 		
@@ -28,15 +24,11 @@ _Performs the mapping/learning process for multiple inputs (samples)._
 
 __samples__ is a list of binary vectors that get passed to the update function one-by-one.
 
-___
-
 	test(samples)
 			
 _Performs the mapping process for multiple inputs (samples) and returns the results without learning._
 
 __samples__ is a list of binary vectors that get passed to the update function one-by-one.
-
-___
 
 ### SelfOrganizingMemory
 

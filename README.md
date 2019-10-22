@@ -18,7 +18,13 @@ At the bottom of the hierarchy, SOMs receive raw data as input just as a typical
 
 By stacking layers on top of one another and reducing the number of SOMs per layer as the hierarchy grows, it is possible to create a system that adequately maps high-dimensional data down to a low-dimensional representation without facing the problems described above. Such a system also behaves externally like an individual SOM, meaning the interface that allows data to be processed by an SOM is the exact same as that which allows a hierarchy of SOMs to process data. The only difference is that the output of the hierachy has passed through multiple stages of dimensionality reduction, whereas the output of an SOM has only gone through a single stage.
 
-# Code Examples
+# Installation
+
+__Install som:__
+
+    pip install git+ssh://git@github.com:CarsonScott/self-organizing-map.git
+
+# Examples
 
 [Self-Organizing Map](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_map.py)
 

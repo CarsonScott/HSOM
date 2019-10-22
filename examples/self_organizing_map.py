@@ -6,6 +6,7 @@ node_count = 5
 input_size = 6
 weight_range = (0.01, 0.03)
 
+# Create a self-organizing map with 5 nodes and 6 inputs
 self_organizing_map = SelfOrganizingMap(
     learning_rate=learning_rate, 
     node_count=node_count, 

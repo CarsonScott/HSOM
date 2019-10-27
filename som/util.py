@@ -1,4 +1,3 @@
-from configparser import ConfigParser
 from random import uniform, sample
 import numpy as np
 

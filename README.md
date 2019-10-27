@@ -24,6 +24,11 @@ __Install som:__
 
     pip install git+https://github.com/CarsonScott/self-organizing-map.git
 
+__Requirements:__
+
+- numpy
+- configparser
+
 # Examples
 
 [Self-Organizing Map](https://github.com/CarsonScott/self-organizing-map/blob/master/examples/self_organizing_map.py)

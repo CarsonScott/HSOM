@@ -37,6 +37,14 @@ _Performs the mapping process for multiple inputs (samples) and returns the resu
 
 <br/>
 
+	set_training(state)
+
+_Turns the training process either on or off._
+
+* __state__ is a boolean value that determines whether or not training occurs.
+
+<br/>
+
 ***
 
 <br/>
@@ -80,3 +88,12 @@ _Performs mapping process for multiple inputs (samples) and returns the results 
 
 * __samples__ is a list of binary vectors that get passed to the update function one-by-one.
 
+<br/>
+
+	set_training(state)
+
+_Turns the training process either on or off._
+
+* __state__ is a boolean value that determines whether or not training occurs.
+
+<br/>

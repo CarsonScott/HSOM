@@ -27,7 +27,6 @@ __Install som:__
 __Requirements:__
 
 - numpy
-- configparser
 
 # Examples
 

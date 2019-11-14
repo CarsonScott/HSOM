@@ -2,14 +2,15 @@
 
 <br/>
 
-	__init__(learning_rate, node_count, input_size, weight_range)
+	__init__(learning_rate, input_size, node_count, weight_range, winner_count=1)
 
 _Creates an instance of a self-organizing map._
 
 * __learning_rate__ is a numerical value that controls the rate at which weights are changed during the learning process.
-* __node_count__ is an integer value that determines the number of nodes in the SOM and thus the size of the output vector.
 * __input_size__ is an integer value that determines the size of the weight vectors associated with each node.
+* __node_count__ is an integer value that determines the number of nodes in the SOM and thus the size of the output vector.
 * __weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values. 
+* __winner_count__ is an integer value that determines the maximum number of nodes that are active at any given time.
 
 <br/>
 	

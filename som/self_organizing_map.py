@@ -1,13 +1,16 @@
 from .util import *
 
 class SelfOrganizingMap:
-	def __init__(self, learning_rate, node_count, input_size, weight_range):
+	def __init__(self, learning_rate, input_size, node_count, weight_range, winner_count=1):
 		self.learning_rate=learning_rate
+		self.input_size=input_size
+		self.node_count=node_count
+		self.winner_count=winner_count
 		self.nodes=[]
 		self.inputs=[]
 		self.outputs=[]
 		self.thresholds=[]
-		self.winner=None
+		self.winners=[]
 		self.training=True
 		for i in range(node_count):
 			self.nodes.append([])
@@ -28,29 +31,31 @@ class SelfOrganizingMap:
 			y=logistic(x-h)
 			self.inputs[i]=x
 			self.outputs[i]=y
-		self.winner=self.outputs.index(max(self.outputs))
+		self.winners=reverse(sort(self.outputs))[0:self.winner_count]
 		output=[0 for i in range(len(self.nodes))]
-		output[self.winner]=1
+		for i in range(len(output)):
+			if i in self.winners:output[i]=1
 		return output
 
 	def compute_weights(self, sample):
-		W=self.nodes[self.winner]
-		h=self.thresholds[self.winner]
-		y=self.outputs[self.winner]
-		x=self.inputs[self.winner]
-		dh=self.learning_rate*(x-h)
-		h+=dh
-		for i in range(len(W)):
-			wi=W[i]
-			xi=sample[i]
-			if xi==0:xi=-1
-			dwij=self.learning_rate*y*xi
-			wi+=dwij
-			if abs(wi) > 4:
-				wi=4*sign(wi)
-			W[i]=wi
-		self.nodes[self.winner]=W
-		self.thresholds[self.winner]=h
+		for winner in self.winners:
+			W=self.nodes[winner]
+			h=self.thresholds[winner]
+			y=self.outputs[winner]
+			x=self.inputs[winner]
+			dh=self.learning_rate*(x-h)
+			h+=dh
+			for i in range(len(W)):
+				wi=W[i]
+				xi=sample[i]
+				if xi==0:xi=-1
+				dwij=self.learning_rate*y*xi
+				wi+=dwij
+				if abs(wi) > 4:
+					wi=4*sign(wi)
+				W[i]=wi
+			self.nodes[winner]=W
+			self.thresholds[winner]=h
 
 	def update(self, sample):
 		output=self.compute_outputs(sample)

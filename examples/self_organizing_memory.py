@@ -19,12 +19,12 @@ self_organizing_memory = SelfOrganizingMemory(
   
 # Create a set of sparse samples
 samples=[]
-	for i in range(node_count):
-    X = [0 for j in range(input_size)]
-    I = [j for j in range(input_size)]
-    for j in sample(I, int(input_size*0.2)):
-      X[j] = 1
-    samples.append(X)
+for i in range(node_count):
+  X = [0 for j in range(input_size)]
+  I = [j for j in range(input_size)]
+  for j in sample(I, int(input_size*0.2)):
+    X[j] = 1
+  samples.append(X)
     
 for i in range(200):
   self_organizing_memory.train(samples)

@@ -30,8 +30,8 @@ class SelfOrganizingMap:
 
 	def compute_boost(self, index):
 		min_average=0.01*max(self.averages)
-		if self.averages[index] < min_average:
-			return self.boost_factor*(min_average-self.averages[index])
+		if self.averages[index] < min_average and min_average!=0:
+			return self.boost_factor*(self.averages[index]/min_average)
 		else:return 0
 
 	def compute_averages(self):
@@ -52,7 +52,13 @@ class SelfOrganizingMap:
 			y=self.outputs[i]
 			s=y+self.compute_boost(i)
 			scores.append(s)
-		self.winners=reverse(sort(scores))[0:self.winner_count]
+		best_indices=reverse(sort(scores))[0:self.winner_count]
+		best_scores=[scores[i] for i in best_indices]
+		options=[]
+		for i in range(len(self.nodes)):
+			if scores[i] >= min(best_scores):
+				options.append(i)
+		self.winners=sample(options, self.winner_count)
 
 	def compute_outputs(self, sample):
 		for i in range(len(self.nodes)):

@@ -1,7 +1,7 @@
 
 from som import SelfOrganizingMap
 
-learning_rate = 0.05
+learning_rate = 0.1
 boost_factor = 2
 node_count = 5
 input_size = 6

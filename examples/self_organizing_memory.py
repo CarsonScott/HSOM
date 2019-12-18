@@ -6,11 +6,11 @@ node_count = 5
 learning_rate = 0.05
 boost_factor = 2
 weight_range = (0.01, 0.03)
-layer_sizes = [20, 15, 10, 5, 2]
-link_percentages = [0.2, 0.2, 0.2, 0.2, 0.75]
-winner_counts = [1, 1, 1, 1, 1]
+layer_sizes = [20, 15, 10, 5, 2, 1]
+link_percentages = [0.2, 0.2, 0.2, 0.2, 0.75, 1.0]
+winner_counts = [1, 1, 1, 1, 1, 1]
 
-# Create hierarchical layers of size 20, 15, 10, 5, and 2
+# Create hierarchical layers of size 20, 15, 10, 5, 2, and 1
 self_organizing_memory = SelfOrganizingMemory(
   learning_rate=learning_rate,
   boost_factor=boost_factor, 
@@ -40,8 +40,8 @@ for i in range(len(outputs)):
 
 # TEST RESULTS
 #
-# [1, 0, 0, 0, 0, 0, 1, 0, 0, 0]
-# [0, 0, 0, 0, 1, 0, 0, 1, 0, 0]
-# [0, 0, 1, 0, 0, 0, 0, 0, 0, 1]
-# [0, 0, 0, 1, 0, 1, 0, 0, 0, 0]
-# [0, 1, 0, 0, 0, 0, 0, 0, 1, 0]
+# [0, 0, 0, 1, 0]
+# [0, 1, 0, 0, 0]
+# [0, 0, 0, 0, 1]
+# [0, 0, 1, 0, 0]
+# [1, 0, 0, 0, 0]

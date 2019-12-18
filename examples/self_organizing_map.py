@@ -2,6 +2,7 @@
 from som import SelfOrganizingMap
 
 learning_rate = 0.05
+boost_factor = 2
 node_count = 5
 input_size = 6
 weight_range = (0.01, 0.03)
@@ -9,6 +10,7 @@ weight_range = (0.01, 0.03)
 # Create a self-organizing map with 5 nodes and 6 inputs
 self_organizing_map = SelfOrganizingMap(
     learning_rate=learning_rate, 
+    boost_factor=boost_factor,
     node_count=node_count, 
     input_size=input_size, 
     weight_range=weight_range)

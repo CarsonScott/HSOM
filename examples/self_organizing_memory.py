@@ -4,20 +4,20 @@ from random import sample
 input_size = 100
 node_count = 5
 learning_rate = 0.05
+boost_factor = 2
 weight_range = (0.01, 0.03)
 layer_sizes = [20, 15, 10, 5, 2]
 link_percentages = [0.2, 0.2, 0.2, 0.2, 0.75]
-winner_counts = [1, 1, 1, 1, 1]
 
 # Create hierarchical layers of size 20, 15, 10, 5, and 2
 self_organizing_memory = SelfOrganizingMemory(
-  learning_rate=learning_rate, 
+  learning_rate=learning_rate,
+  boost_factor=boost_factor, 
   node_count=node_count, 
   input_size=input_size, 
   weight_range=weight_range, 
   layer_sizes=layer_sizes, 
-  link_percentages=link_percentages,
-  winner_counts=winner_counts)
+  link_percentages=link_percentages)
   
 # Create a set of sparse samples
 samples=[]

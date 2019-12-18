@@ -7,6 +7,7 @@
 _Creates an instance of a self-organizing map._
 
 * __learning_rate__ is a numerical value that controls the rate at which weights are changed during the learning process.
+* __boost_factor__ is a numerical value that controls the handicap applied to the least-used nodes when selecting winners.
 * __input_size__ is an integer value that determines the size of the weight vectors associated with each node.
 * __node_count__ is an integer value that determines the number of nodes in the SOM and thus the size of the output vector.
 * __weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values. 
@@ -59,6 +60,7 @@ _Turns the training process either on or off._
 _Creates instance of self-organizing memory._
 	
 * __learning_rate__ is a numerical value that controls the rate at which weights are changed during the learning process.
+* __boost_factor__ is a numerical value that controls the handicap applied to least-used nodes when selecting winners.
 * __input_size__ is an integer value that determines the size of the weight vectors associated with each node in a SOM.
 * __node_count__ is an integer value that determines the number of nodes in each SOM and thus the size of the output vector of each SOM.
 * __weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values.

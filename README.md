@@ -2,12 +2,11 @@
 
 A hierarchical self-organizing map (HSOM) is an unsupervised neural network that learns patterns from high-dimensional space and represents them in lower dimensions. 
 
-HSOM networks recieve inputs and feed them into a set of self-organizing maps, each learning individual features of the input space. These maps produce sparse output vectors with only the most responsive nodes set to '1', a result of competitive inhibition which restricts the number of 'winners' (i.e. active nodes) allowed at any given time.
+HSOM networks recieve inputs and feed them into a set of self-organizing maps, each learning individual features of the input space. These maps produce sparse output vectors with only the most responsive nodes activating, a result of competitive inhibition which restricts the number of 'winners' (i.e. active nodes) allowed at any given time.
 
-Each layer in an HSOM network contains a set of maps that view part of the input space and output sparse vectors, which together form the input to the next layer in the hierarchy. Information becomes increasingly abstract as it is passed through the network and ultimately yields a low-dimensional, sparse representation of the original data.
+Each layer in an HSOM network contains a set of maps that view part of the input space and generate sparse output vectors, which together form the input for the next layer in the hierarchy. Information becomes increasingly abstract as it is passed through the network and ultimately results in a low-dimensional sparse representation of the original data.
 
-# Overview
-
+# Description 
 Self-organizing maps are useful because they automatically reduce the dimensionality of whatever data is being observed. However, if the dimensionality of the data in question is sufficiently high, a single self-organizing map will fail to reduce it while maintaining an accurate representation in the process.
 
 The solution is to combine many self-organizing maps into one, giant structure. SOMs can be arranged in a hierarchy, wherein each layer of the hierarchy contains a set of SOMs that receive input from the previous layer and produce output to the next. 

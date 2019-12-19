@@ -6,6 +6,10 @@ HSOM networks recieve inputs and feed them into a set of self-organizing maps, e
 
 Each layer in an HSOM network contains a set of maps that view part of the input space and generate sparse output vectors, which together form the input for the next layer in the hierarchy. Information becomes increasingly abstract as it is passed through the network and ultimately results in a low-dimensional sparse representation of the original data.
 
+The training process results in a model that maps certain input patterns to certain labels, corresponding to high-dimensional and low-dimensional data respectively. Given that training is unsupervised, the labels have no intrinsic meaning but rather become meaningful through their repeated association with certain input patterns and their relative lack of association with others. Put simply, labels come to represent higher-dimensional patterns over time, allowing them to be distinguished from one another in a meaningful way. 
+
+This process of 'meaning-making' is the essence of HSOM networks. Not only does the learning algorithm map between input-output pairs, it also decides which pairs are most likely to result in a reliable model. This differs from a traditional supervised neural network which is tasked only with the problem of mapping between input-output pairs given to it by a supervisor. Such is the benefit of using an unsupervised learning algorithm for pattern recognition.
+
 # Description 
 Self-organizing maps are useful because they automatically reduce the dimensionality of whatever data is being observed. However, if the dimensionality of the data in question is sufficiently high, a single self-organizing map will fail to reduce it while maintaining an accurate representation in the process.
 

@@ -70,7 +70,7 @@ class SelfOrganizingMap:
 				xj=sample[j]
 				wj=W[j]
 				x+=xj*wj
-			y=logistic(self.compute_boost(i)*x-h)
+			y=logistic(x-h)*self.compute_boost(i)
 			self.inputs[i]=x
 			self.outputs[i]=y
 

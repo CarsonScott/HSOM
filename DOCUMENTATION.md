@@ -63,7 +63,7 @@ _Turns the training process either on or off._
 
 <br/>
 
-	__init__(learning_rate, input_size=0, layer_sizes=[], input_percents=[], learning_rates=[], boost_factors=[], node_counts=[], winner_counts=[], initial_ranges=[])
+	__init__(input_size=0, layer_sizes=[], input_percents=[], learning_rates=[], boost_factors=[], node_counts=[], winner_counts=[], initial_ranges=[])
 	
 _Creates instance of self-organizing memory._
 

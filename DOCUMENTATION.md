@@ -2,7 +2,7 @@
 
 <br/>
 
-	__init__(learning_rate, input_size, node_count, winner_count=1, initial_range=(-1,1))
+	__init__(learning_rate=0, boost_factor=0, input_size=0, node_count=0, winner_count=1, initial_range=(-1,1))
 
 _Creates an instance of a self-organizing map._
 
@@ -63,7 +63,7 @@ _Turns the training process either on or off._
 
 <br/>
 
-	__init__(learning_rate, input_size, node_count, initial_range=(-1,1), layer_sizes=[], link_percentages=[], winner_counts=[])
+	__init__(learning_rate, input_size=0, layer_sizes=[], input_percents=[], learning_rates=[], boost_factors=[], node_counts=[], winner_counts=[], initial_ranges=[])
 	
 _Creates instance of self-organizing memory._
 

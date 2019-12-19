@@ -1,7 +1,7 @@
 from hsom import SelfOrganizingMap
 
 learning_rate = 0.1
-boost_factor = 2
+boost_factor = 1
 node_count = 5
 input_size = 6
 

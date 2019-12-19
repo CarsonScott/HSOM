@@ -89,10 +89,10 @@ class SelfOrganizingMap:
 				wi=W[i]
 				xi=sample[i]
 				if xi==0:xi=-1
-				dwij=self.learning_rate*y*xi
-				wi+=dwij
-				if abs(wi) > 4:
-					wi=4*sign(wi)
+				dwi=self.learning_rate*y*xi
+				wi+=dwi
+				if abs(wi) > 1:
+					wij=sign(wi)
 				W[i]=wi
 			self.nodes[winner]=W
 			self.thresholds[winner]=h

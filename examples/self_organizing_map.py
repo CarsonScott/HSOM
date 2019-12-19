@@ -1,5 +1,4 @@
-
-from som import SelfOrganizingMap
+from hsom import SelfOrganizingMap
 
 learning_rate = 0.1
 boost_factor = 2

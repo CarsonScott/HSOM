@@ -59,7 +59,7 @@ _Turns the training process either on or off._
 
 <br/>
 
-### SelfOrganizingMemory
+### SelfOrganizingNetwork
 
 <br/>
 
@@ -80,7 +80,7 @@ _Creates instance of self-organizing memory._
 	
 	load(filename)
 
-_Initializes the SelfOrganizingMemory with parameters from a json file._
+_Initializes the SelfOrganizingNetwork with parameters from a json file._
 
 * __filename__ is a string that matches the directory of an existing json file. 
 

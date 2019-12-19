@@ -1,2 +1,2 @@
 from .self_organizing_map import SelfOrganizingMap
-from .self_organizing_memory import SelfOrganizingMemory
+from .self_organizing_network import SelfOrganizingNetwork

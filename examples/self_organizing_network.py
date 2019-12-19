@@ -1,4 +1,4 @@
-from som import SelfOrganizingMemory
+from hsom import SelfOrganizingNetwork
 from random import sample 
 
 input_size = 100
@@ -11,7 +11,7 @@ winner_count = 1
 initial_range = (-0.5, 0.5)
 
 # Create hierarchical layers of size 20, 15, 10, 5, 2, and 1
-self_organizing_memory = SelfOrganizingMemory(
+self_organizing_network = SelfOrganizingNetwork(
   input_size=input_size,
   layer_sizes=layer_sizes,
   input_percents=input_percents,
@@ -31,9 +31,9 @@ for i in range(node_count):
   samples.append(X)
     
 for i in range(200):
-  self_organizing_memory.train(samples)
+  self_organizing_network.train(samples)
   
-outputs=self_organizing_memory.test(samples)
+outputs=self_organizing_network.test(samples)
 
 for i in range(len(outputs)):
   print(outputs[i])

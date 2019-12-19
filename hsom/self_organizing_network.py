@@ -1,7 +1,7 @@
 from .self_organizing_map import SelfOrganizingMap
 from .util import *
 
-class SelfOrganizingMemory:	
+class SelfOrganizingNetwork:
 
 	def __init__(self, input_size=0, 
 					   layer_sizes=[],

@@ -1,4 +1,4 @@
-# Unsupervised Classification with Hierarchical Self-Organizing Maps (HSOM)
+# Hierarchical Self-Organizing Maps
 
 A hierarchical self-organizing map (HSOM) is an unsupervised neural network that learns patterns from high-dimensional space and represents them in lower dimensions. 
 

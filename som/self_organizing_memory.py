@@ -2,7 +2,7 @@ from .self_organizing_map import SelfOrganizingMap
 from .util import *
 
 class SelfOrganizingMemory:
-	def __init__(self, learning_rate, boost_factor, input_size, node_count, weight_range, layer_sizes=[], link_percentages=[], winner_counts=[]):
+	def __init__(self, learning_rate, boost_factor, input_size, node_count, initial_range, layer_sizes=[], link_percentages=[], winner_counts=[]):
 		self.maps=[]
 		self.links=[]
 		self.outputs=[]
@@ -23,7 +23,7 @@ class SelfOrganizingMemory:
 					boost_factor=boost_factor,
 					input_size=link_count, 
 					node_count=node_count, 
-					weight_range=weight_range, 
+					initial_range=initial_range, 
 					winner_count=winner_count)
 				links=sample([j for j in range(input_size)], link_count)
 				self.maps[i].append(som)

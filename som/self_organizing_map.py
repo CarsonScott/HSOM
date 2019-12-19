@@ -1,7 +1,7 @@
 from .util import *
 
 class SelfOrganizingMap:
-	def __init__(self, learning_rate, boost_factor, input_size, node_count, weight_range, winner_count=1):
+	def __init__(self, learning_rate, boost_factor, input_size, node_count, winner_count=1, initial_range=(-1,1)):
 		self.learning_rate=learning_rate
 		self.input_size=input_size
 		self.boost_factor=boost_factor
@@ -18,7 +18,7 @@ class SelfOrganizingMap:
 		for i in range(node_count):
 			self.nodes.append([])
 			for j in range(input_size):
-				self.nodes[i].append(uniform(*weight_range))
+				self.nodes[i].append(uniform(*initial_range))
 			self.inputs.append(0)
 			self.outputs.append(0)
 			self.averages.append(0)

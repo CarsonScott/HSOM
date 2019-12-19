@@ -2,7 +2,7 @@
 
 <br/>
 
-	__init__(learning_rate, input_size, node_count, weight_range, winner_count=1)
+	__init__(learning_rate, input_size, node_count, winner_count=1, initial_range=(-1,1))
 
 _Creates an instance of a self-organizing map._
 
@@ -10,8 +10,8 @@ _Creates an instance of a self-organizing map._
 * __boost_factor__ is a numerical value that controls the handicap applied to the least-used nodes when selecting winners.
 * __input_size__ is an integer value that determines the size of the weight vectors associated with each node.
 * __node_count__ is an integer value that determines the number of nodes in the SOM and thus the size of the output vector.
-* __weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values. 
 * __winner_count__ is an integer value that determines the maximum number of nodes that are active at any given time.
+* __initial_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values. 
 
 <br/>
 	
@@ -55,7 +55,7 @@ _Turns the training process either on or off._
 
 <br/>
 
-	__init__(learning_rate, input_size, node_count, weight_range, layer_sizes=[], link_percentages=[], winner_counts=None)
+	__init__(learning_rate, input_size, node_count, initial_range=(-1,1), layer_sizes=[], link_percentages=[], winner_counts=[])
 	
 _Creates instance of self-organizing memory._
 	
@@ -63,10 +63,10 @@ _Creates instance of self-organizing memory._
 * __boost_factor__ is a numerical value that controls the handicap applied to least-used nodes when selecting winners.
 * __input_size__ is an integer value that determines the size of the weight vectors associated with each node in a SOM.
 * __node_count__ is an integer value that determines the number of nodes in each SOM and thus the size of the output vector of each SOM.
-* __weight_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values.
+* __initial_range__ is a numerical tuple that dictates the upper and lower limits of the initial random weight values. 
 * __layer_sizes__ is a list of integers that dictate the size of each layer from the bottom to the top of the hierarchy.
 * __link_percentages__ is a list of values that determine the percentage of the input vector that the SOMs in each layer are connected to. 
-* __winner_counts__ is a list of integers that determine the maximum number of active nodes per SOM in each layer at any given time. When set to None, all layers are assigned a winner count of 1.
+* __winner_counts__ is a list of integers that determine the maximum number of active nodes per SOM in each layer at any given time.
 
 <br/>
 

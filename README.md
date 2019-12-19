@@ -2,13 +2,9 @@
 
 A hierarchical self-organizing map (HSOM) is an unsupervised neural network that learns patterns from high-dimensional space and represents them in lower dimensions. 
 
-HSOM networks take inputs and feed them into many self-organizing maps, each learning individual features of the input space. 
+HSOM networks recieve inputs and feed them into a set of self-organizing maps, each learning individual features of the input space. These maps produce sparse output vectors with only the most responsive nodes set to '1', a result of competitive inhibition which restricts the number of 'winners' (i.e. active nodes) allowed at any given time.
 
-These maps produce a sparse output vector with only the most responsive nodes set to '1'. This occurs through competitive inhibition that restricts the possible number of 'winners' (i.e. active nodes) at any given time.
-
-Each HSOM layer contains a set of maps that view part of the input space and produce an output which is concatenated with every other output and sent up to the following layer as input. 
-
-Information becomes increasingly abstract as it passes through the network, transforming into a sparse, low-dimensional representation of the original data.
+Each layer in an HSOM network contains a set of maps that view part of the input space and output sparse vectors, which together form the input to the next layer in the hierarchy. Information becomes increasingly abstract as it is passed through the network and ultimately yields a low-dimensional, sparse representation of the original data.
 
 # Overview
 

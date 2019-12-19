@@ -1,10 +1,14 @@
-# A Self-Organizing Map for Multiclass Classification
+# Hierarchical Self-Organizing Maps for Unsupervised Classification 
 
-A self-organizing map (SOM) is an artificial neural network that uses unsupervised learning to generate a low-dimensional representation of the input space. 
+A hierarchical self-organizing map (HSOM) is an unsupervised neural network that learns patterns from high-dimensional space and represents them in lower dimensions. 
 
-This specific SOM is a feedforward neural network. Each node in the output layer has a weight vector that defines a particular input pattern. Nodes produce a logistic output which allows them to be ranked from the most to least responsive when a given input is observed. The most responsive node is called the winner and has a state equal to 1, whereas the less responsive nodes have states equal to 0. 
+HSOM networks take inputs and feed them into many self-organizing maps, each learning individual features of the input space. 
 
-The winner represents a class to which the given input is mapped. The weights of the winner are trained so that they better resemble the input pattern. The SOM produces a state vector as output, which shows at any given time only one node active in response to a given input.
+These maps produce a sparse output vector with only the most responsive nodes set to '1'. This occurs through competitive inhibition that restricts the possible number of 'winners' (i.e. active nodes) at any given time.
+
+Each HSOM layer contains a set of maps that view part of the input space and produce an output which is concatenated with every other output and sent up to the following layer as input. 
+
+Information becomes increasingly abstract as it passes through the network, transforming into a sparse, low-dimensional representation of the original data.
 
 # A Hierarchy of Self-Organizing Maps
 

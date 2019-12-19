@@ -21,7 +21,7 @@ By stacking layers on top of one another and reducing the number of SOMs per lay
 
 __Install hsom:__
 
-    pip install git+https://github.com/CarsonScott/self-organizing-map.git
+    pip install git+https://github.com/CarsonScott/HSOM.git
 
 __Requirements:__
 

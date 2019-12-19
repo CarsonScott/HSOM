@@ -1,7 +1,14 @@
 from .util import *
 
 class SelfOrganizingMap:
-	def __init__(self, learning_rate, boost_factor, input_size, node_count, winner_count=1, initial_range=(-1,1)):
+
+	def __init__(self, learning_rate=0, 
+					   boost_factor=0, 
+					   input_size=0, 
+					   node_count=0, 
+					   winner_count=1, 
+					   initial_range=(-1,1)):
+
 		self.learning_rate=learning_rate
 		self.input_size=input_size
 		self.boost_factor=boost_factor
@@ -118,3 +125,20 @@ class SelfOrganizingMap:
 			outputs.append(output)
 		self.set_training(training)
 		return outputs
+
+	def load(self, filename):
+		data=json.load(open(filename, 'r'))
+		learning_rate=data['learning_rate']
+		boost_factor=data['boost_factor']
+		input_size=data['input_size']
+		node_count=data['node_count']
+		winner_count=data['winner_count']
+		initial_range=data['initial_range']
+		self.__init__(
+			learning_rate=learning_rate,
+			boost_factor=boost_factor,
+			input_size=input_size,
+			node_count=node_count,
+			winner_count=winner_count,
+			initial_range=initial_range)
+		return self

@@ -1,5 +1,6 @@
 from random import uniform, sample
 import numpy as np
+import json
 
 def logistic(x):  
     return np.exp(-np.logaddexp(0, -x))

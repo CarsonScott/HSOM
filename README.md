@@ -27,6 +27,7 @@ __Install som:__
 __Requirements:__
 
 - numpy
+- json
 
 # Examples
 

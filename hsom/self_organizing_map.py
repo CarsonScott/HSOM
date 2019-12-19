@@ -2,10 +2,10 @@ from .util import *
 
 class SelfOrganizingMap:
 
-	def __init__(self, learning_rate=0, 
-					   boost_factor=0, 
-					   input_size=0, 
-					   node_count=0, 
+	def __init__(self, learning_rate=None, 
+					   boost_factor=None, 
+					   input_size=None, 
+					   node_count=None, 
 					   winner_count=1, 
 					   initial_range=(-1,1)):
 
@@ -71,7 +71,11 @@ class SelfOrganizingMap:
 		for i in range(len(self.nodes)):
 			h=self.thresholds[i]
 			W=self.nodes[i]
-			x=sum([sample[j]*W[j] for j in range(len(sample))])
+			x=0
+			for j in range(len(W)):
+				xj=sample[j]
+				wj=W[j]
+				x+=xj*wj
 			y=logistic(x-h)
 			self.inputs[i]=x
 			self.outputs[i]=y
@@ -93,13 +97,13 @@ class SelfOrganizingMap:
 			dh=self.learning_rate*(x-h)
 			h+=dh
 			for i in range(len(W)):
+				if sample[i]==1:
+					dwi=self.learning_rate*y
+				else:dwi=-self.learning_rate*y
 				wi=W[i]
-				xi=sample[i]
-				if xi==0:xi=-1
-				dwi=self.learning_rate*y*xi
 				wi+=dwi
-				if abs(wi) > 1:
-					wij=sign(wi)
+				if abs(wi) > 4:
+					wij=4*sign(wi)
 				W[i]=wi
 			self.nodes[winner]=W
 			self.thresholds[winner]=h

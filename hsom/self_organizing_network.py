@@ -3,7 +3,7 @@ from .util import *
 
 class SelfOrganizingNetwork:
 
-	def __init__(self, input_size=0, 
+	def __init__(self, input_size=None, 
 					   layer_sizes=[],
 					   input_percents=[],
 					   learning_rates=[], 
@@ -106,15 +106,23 @@ class SelfOrganizingNetwork:
 		node_counts=[]
 		winner_counts=[]
 		initial_ranges=[]
+
 		for i in range(len(data['layers'])):
 			layer_data=data['layers'][i]
-			layer_sizes.append(layer_data['region_count'])
+			layer_sizes.append(layer_data['layer_size'])
 			input_percents.append(layer_data['input_percent'])
-			learning_rates.append(layer_data['learning_rate'])
-			boost_factors.append(layer_data['boost_factor'])
-			node_counts.append(layer_data['node_count'])
-			winner_counts.append(layer_data['winner_count'])
-			initial_ranges.append(layer_data['initial_range'])
+
+			if 'learning_rate' in layer_data:learning_rates.append(layer_data['learning_rate'])
+			elif 'learning_rate' in data:learning_rates.append(data['learning_rate'])
+			if 'boost_factor' in layer_data:boost_factors.append(layer_data['boost_factor'])
+			elif 'boost_factor' in data:boost_factors.append(data['boost_factor'])
+			if 'node_count' in layer_data:node_counts.append(layer_data['node_count'])
+			elif 'node_count' in data:node_counts.append(data['node_count'])
+			if 'winner_count' in layer_data:winner_counts.append(layer_data['winner_count'])
+			elif 'winner_count' in data:winner_counts.append(data['winner_count'])
+			if 'initial_range' in layer_data:initial_ranges.append(layer_data['initial_range'])
+			elif 'initial_range' in data:initial_ranges.append(data['initial_range'])
+
 		self.__init__(
 			input_size=input_size,
 			layer_sizes=layer_sizes,

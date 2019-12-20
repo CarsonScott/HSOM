@@ -1,9 +1,16 @@
-from random import uniform, sample
 import numpy as np
-import json
 
-def logistic(x):  
+
+def logistic(x):
     return np.exp(-np.logaddexp(0, -x))
 
+
 def sign(x):
-	return -1 if x < 0 else 1 if x > 0 else 0
+    return -1 if x < 0 else 1 if x > 0 else 0
+
+
+def ith_if_iterable(obj, i):
+    if isinstance(obj, list) or isinstance(obj, tuple):
+        return obj[i]
+    else:
+        return obj

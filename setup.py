@@ -7,6 +7,6 @@ setup(
     description='Hierarchical Self-Organizing Map for Multiclass Classification.',
     author_email='carsonjscott14@gmail.com',
     url='https://github.com/CarsonScott/self-organizing-map.git',
-    packages=['hsom'],
+    packages=['hsom'], requires=['numpy']
 )
 

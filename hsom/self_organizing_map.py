@@ -14,23 +14,14 @@ class SelfOrganizingMap:
 		self.boost_factor=boost_factor
 		self.node_count=node_count
 		self.winner_count=winner_count
-		self.nodes=[]
-		self.inputs=[]
-		self.outputs=[]
-		self.thresholds=[]
+		self.inputs=np.zeros(node_count)
+		self.outputs=np.zeros(node_count)
+		self.thresholds=np.zeros(node_count)
+		self.averages=np.zeros(node_count)
+		self.nodes=np.array([[uniform(*initial_range) for j in range(input_size)] for i in range(node_count)])
+		self.histories=[[] for i in range(node_count)]
 		self.winners=[]
-		self.averages=[]
-		self.histories=[]
 		self.training=True
-		for i in range(node_count):
-			self.nodes.append([])
-			for j in range(input_size):
-				self.nodes[i].append(uniform(*initial_range))
-			self.inputs.append(0)
-			self.outputs.append(0)
-			self.averages.append(0)
-			self.histories.append([])
-			self.thresholds.append(0)
 			
 	def set_training(self, training):
 		self.training=training
@@ -53,7 +44,7 @@ class SelfOrganizingMap:
 			self.averages[i]=a
 
 	def compute_winners(self):
-		best_indices=reverse(sort(self.outputs))[0:self.winner_count]
+		best_indices=list(reversed(np.argsort(self.outputs)))[0:self.winner_count]
 		best_outputs=[self.outputs[i] for i in best_indices]
 		options=[]
 		for i in range(len(self.nodes)):
